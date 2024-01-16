@@ -34,6 +34,55 @@
             font-size: 16px;
             cursor: pointer;
             border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #generateButton span {
+            font-size: 48px;
+            color: #6fb07f;
+        }
+
+        #generateButton img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+            filter: alpha(opacity=0);
+            opacity: 0;
+        }
+
+        #generateButton:focus {
+            /*animation*/
+            -webkit-animation: extend 1s ease-in-out;
+            -ms-animation: extend 1s ease-in-out;
+            animation: extend 1s ease-in-out;
+            -webkit-animation-fill-mode: forwards;
+            /* Chrome, Safari, Opera */
+            animation-fill-mode: forwards;
+        }
+
+        #generateButton:focus > span {
+            /*animation*/
+            -webkit-animation: disappear 1s ease-in-out;
+            -ms-animation: disappear 1s ease-in-out;
+            animation: disappear 1s ease-in-out;
+            -webkit-animation-fill-mode: forwards;
+            /* Chrome, Safari, Opera */
+            animation-fill-mode: forwards;
+        }
+
+        #generateButton:focus > img {
+            /*animation*/
+            -webkit-animation: appear 1s ease-in-out;
+            -ms-animation: appear 1s ease-in-out;
+            animation: appear 1s ease-in-out;
+            -webkit-animation-fill-mode: forwards;
+            /* Chrome, Safari, Opera */
+            animation-fill-mode: forwards;
         }
     </style>
 </head>
@@ -41,7 +90,10 @@
     <div id="app">
         <h1>Boredom Buster</h1>
         <p id="activity">Click the button to get a suggestion!</p>
-        <button id="generateButton" onclick="generateActivity()">Generate Activity</button>
+        <button id="generateButton" onclick="generateActivity()">
+            <span>fun button</span>
+            <img src="https://images.unsplash.com/photo-1587207433549-7d796bccc6a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Fun Image">
+        </button>
     </div>
 
     <script>
