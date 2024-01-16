@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boredom Buster</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fdebd0; /* Soft orange color */
+            text-align: center;
+            margin: 50px;
+        }
+
+        #app {
+            max-width: 600px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #activity {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        #generateButton {
+            background-color: #ff7f50; /* Darker orange for the button */
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>Boredom Buster</h1>
+        <p id="activity">Click the button to get a suggestion!</p>
+        <button id="generateButton" onclick="generateActivity()">Generate Activity</button>
+    </div>
+
+    <script>
+        const activities = [
+            "Learn a new language",
+            "Read a book",
+            "Take a walk in nature",
+            "Try a new recipe",
+            "Write in a journal",
+            "Learn to play a musical instrument",
+            "Exercise for 30 minutes",
+            "Practice mindfulness or meditation",
+            "Start a DIY project",
+            "Learn a new skill online"
+            // Add more activities as needed
+        ];
+
+        function generateActivity() {
+            const randomIndex = Math.floor(Math.random() * activities.length);
+            const randomActivity = activities[randomIndex];
+            document.getElementById('activity').innerText = randomActivity;
+        }
+    </script>
+</body>
+</html>
